@@ -2,15 +2,17 @@ class UsersController < ApplicationController
 
   def index #
     @title = "Users"
-    @message = "This is a list of all users."
-    # @users = users.all
+    @users = User.all
   end
 
   def new #
-    @message = "This is the form for a new user."
+    @user = User.new
   end
 
   def create
+    @user = User.new(user_params)
+    @user.save
+    redirect_to posts_path
     # This action receives data from #new and creates a new user.
 
     # puts "PARAMS:"
@@ -33,12 +35,10 @@ class UsersController < ApplicationController
   def show #
     # @user = User.find(params[:id])
     # @message = "This route shows all info for an individual user named: #{@user.firstname} #{@user.lastname}."
-    @message = "This route shows all info for an individual user."
   end
 
   def edit #
     # Must have 'shortcuts' in routes for this to work
-    @message = "This is the form to edit an existing user."
     # @user = User.find(params[:id])
   end
 
@@ -58,4 +58,8 @@ class UsersController < ApplicationController
     # redirect_to url_for(:controller => :users, :action => :index)
   end
 
+private
+def user_params
+   params.require(:user).permit(:fname, :lname, :email, :username, :password)
+end
 end
