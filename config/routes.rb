@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-# resources :users
+  # resources :users
+  resources :sessions
+
   # Welcome routes
 get "/"                         => "welcome#index"
 get "/about-us"                 => "welcome#about_us"

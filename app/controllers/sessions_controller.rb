@@ -1,16 +1,22 @@
 class SessionsController < ApplicationController
 
     def index #
+      
     end
 
-    def new #
+    def new
+      @title = "Login"
+      @message = "Existing User Login"
     end
 
     def create
-      session[:current_user_id] = @user.id
+      session[:user_id] = User.where(username: params[:session][:username]).first.id
+      p session[:user_id]
+      redirect_to posts_path
     end
 
     def show #
+
     end
 
     def edit #

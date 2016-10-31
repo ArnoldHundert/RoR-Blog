@@ -1,17 +1,21 @@
 <!-- User's file -->
 
-<div id="createUser">
-<%= form_for :user, url: new_user_path do |user|%>
-  <%= label_tag "name", "First Name: " %>
-  <%= user.text_field :fname, placeholder: "First Name" %><br>
-  <%= user.text_field :lname, placeholder: "Last Name" %><br>
-  <%= user.text_field :email, placeholder: "email" %><br>
-  <%= user.text_field :username, placeholder: "Username" %><br>
-  <%= user.password_field :password, placeholder: "password" %><br>
-  <%= user.submit "Save" %>
-<% end %>
-</div>
-
 <div class="messageStyle">
   <%= @message %>
+</div>
+
+<div id="createUser">
+<%= form_for :user, url: new_user_path do |user|%>
+  <%= label_tag "fname", "First Name: ", :class => "labelStyle" %>
+  <%= user.text_field :fname, placeholder: "First Name", :autofocus=>true, :class => "fieldStyle" %><br>
+  <%= label_tag "lname", "Last Name: ", :class => "labelStyle" %>
+  <%= user.text_field :lname, placeholder: "Last Name", :class => "fieldStyle" %><br>
+  <%= label_tag "email", "Email: ", :class => "labelStyle" %>
+  <%= user.text_field :email, placeholder: "email", :class => "fieldStyle" %><br>
+  <%= label_tag "username", "User Name: ", :class => "labelStyle" %>
+  <%= user.text_field :username, placeholder: "Username", :class => "fieldStyle" %><br>
+  <%= label_tag "password", "Password: ", :class => "labelStyle" %>
+  <%= user.password_field :password, placeholder: "password", :class => "fieldStyle" %><br>
+  <%= user.submit "Save", :class => "buttonUserSave" %>
+<% end %>
 </div>

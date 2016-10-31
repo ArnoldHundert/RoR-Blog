@@ -1,0 +1,15 @@
+
+<br>
+<div class="messageStyle">
+  <%= @message %>
+</div>
+
+<div id="createUser">
+<%= form_for :session, url: sessions_path do |f|%>
+  <%= label_tag "username", "User Name: ", :class => "labelStyle" %>
+  <%= f.text_field :username, placeholder: "Username", :autofocus=>true, :class => "fieldStyle" %><br>
+  <%= label_tag "password", "Password: ", :class => "labelStyle" %>
+  <%= f.password_field :password, placeholder: "password", :class => "fieldStyle" %><br>
+  <%= f.submit "Submit", :class => "buttonUserSave2" %>
+<% end %>
+</div>

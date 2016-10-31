@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   def index #
     @title = "Posts"
     @message = "This is a list of all posts."
+    @edgeLeft = " * * *"
+    @edgeRight = "* * *  "
+    @movieTitle = "Avatar"
     # @posts = posts.all
   end
 
