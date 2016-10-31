@@ -16,7 +16,7 @@ b3 = Post.create(post_text: 'The special effects were amazing. The characters we
 b4 = Post.create(post_text: 'Great movie. Must see.', which_movie: 'Dances with Wolves', user_id: 4)
 
 c1 = Comment.create(comment_text: 'I agree. Best movie ever.', post_id: 1)
-c2 = Comment.create(comment	_text: 'That’s a lot of times in the theater. It was a great movie, so I understand.', post_id: 2)
+c2 = Comment.create(comment_text: 'That’s a lot of times in the theater. It was a great movie, so I understand.', post_id: 2)
 c3 = Comment.create(comment_text: 'Sequels? There’s gonna be sequels? Awesome!', post_id: 1)
 c4 = Comment.create(comment_text: 'Dances with Wolves is my favorite movie. I agree….it’s a must see…', post_id: 4)
 c5 = Comment.create(comment_text: 'The special effects were definitely great.', post_id: 3)

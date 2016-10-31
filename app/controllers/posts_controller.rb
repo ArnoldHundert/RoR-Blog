@@ -3,34 +3,19 @@ class PostsController < ApplicationController
   def index #
     @title = "Posts"
     @message = "This is a list of all posts."
-    @edgeLeft = " * * *"
-    @edgeRight = "* * *  "
-    @movieTitle = "Avatar"
-    # @posts = posts.all
+    # @abcd = "* * *" + " Avatar " + "* * *"
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new #
     @message = "This is the form for a new post."
+    @post = Post.new
   end
 
   def create
-    # This action receives data from #new and creates a new post.
-
-    # puts "PARAMS:"
-    # puts params["post"]["firstname"]
-    # puts params["post"]["lastname"]
-
-    # .create returns the obj that was just created
-    # @new_post = post.create(firstname: params["post"]["firstname"], lastname: params["post"]["lastname"])
-
-    # check if .create did its job
-    # if @new_post
-    #   puts "SUCCESS"
-    #   redirect_to url_for(:controller => :posts, :action => :index)
-    # else
-    #   puts "ERROR!!"
-    #   redirect_to url_for(:controller => :posts, :action => :new)
-    # end
+    @post = Post.new(post_params)
+    @post.save
+    redirect_to posts_path
   end
 
   def show #
@@ -61,4 +46,8 @@ class PostsController < ApplicationController
     # redirect_to url_for(:controller => :posts, :action => :index)
   end
 
+private
+  def post_params
+    params.require(:post).permit(:post_text, :which_movie, :user_id)
+  end
 end

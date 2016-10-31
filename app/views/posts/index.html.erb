@@ -3,19 +3,22 @@
 <br>
 <div class="messageStyle">
   <%= @message %>
-</div>
-<br>
-<div id="postPlace">
-  <div id="movieTitle">
-    <div id="leftSide">
-      <%= @edgeLeft %>
+</div><br>
+
+
+  <% @posts.each do |mt| %>
+
+    <div id="postBox">
+
+      <div id="movieTitle">
+          * * * <%= mt.which_movie %> * * * 
+      </div>
+
+
+      <div id="textPost">
+        <%= mt.post_text %>
+      </div>
+
     </div>
-    <div id="moviesTitle">
-      <%= @movieTitle %>
-    </div>
-    <div id="rightSide">
-      <%= @edgeRight %>
-    </div>
-  </div>
-</div>
-<!-- <%= @users %> -->
+
+  <% end %>

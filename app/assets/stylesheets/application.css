@@ -29,7 +29,7 @@
  }
  .backimg{
  	background-image: url(/assets/The-Movies.jpg);
- 	background-size: cover;
+ 	background-size: 100%;
  }
 .messageStyle{
   text-align: center;

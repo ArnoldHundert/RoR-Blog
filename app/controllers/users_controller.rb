@@ -61,8 +61,8 @@ class UsersController < ApplicationController
     # redirect_to url_for(:controller => :users, :action => :index)
   end
 
-private
-def user_params
-   params.require(:user).permit(:fname, :lname, :email, :username, :password)
-end
+  private
+  def user_params
+     params.require(:user).permit(:fname, :lname, :email, :username, :password)
+  end
 end

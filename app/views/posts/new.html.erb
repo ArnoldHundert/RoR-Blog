@@ -2,3 +2,9 @@
 
 <div class="messageStyle">
 </div>
+
+<%= form_for @post do |p| %>
+  <%= p.text_area :which_movie, placeholder: "Movie Title" %>
+  <%= p.text_area :post_text, placeholder: "Your Post" %>
+  <%= p.submit %>
+<% end %>

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028235331) do
+ActiveRecord::Schema.define(version: 20161031192000) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment_text", limit: 150
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161028235331) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.string   "which_movie", limit: 50
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
