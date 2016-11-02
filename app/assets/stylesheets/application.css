@@ -21,6 +21,7 @@
  	 width: 100%;
  	 height: 40px;
  	 background-color: lightblue;
+   z-index: 1;
  }
  .logout {
   font-size: 28px;
@@ -48,6 +49,7 @@
  	height: 40px;
  	top: 9px;
  	left: 10px;
+  z-index: 2;
  }
  .hamburgerMenu {
  	position: relative;
