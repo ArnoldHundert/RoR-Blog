@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # resources :users
   resources :sessions
-  resources :posts
+
+  resources :posts do
+    resources :comments
+  end
 
   # Welcome routes
 get "/"                         => "welcome#index"
@@ -27,14 +30,14 @@ get "/about-us"                 => "welcome#about_us"
 # patch   "/posts/:id"         =>  "posts#update"
 # delete  "/posts/:id"         =>  "posts#destroy"
 #
-# # Comment routes
-# get     "/comments/new"         =>  "comments#new", as: "new_comment"
-# post    "/comments/new"         =>  "comments#create"
-# get     "/comments"             =>  "comments#index", as: "comments"
-# get     "/comments/:id"         =>  "comments#show", as: "comment"
-# get     "/comments/:id/edit"    =>  "comments#edit", as: "edit_comment"
-# put     "/comments/:id"         =>  "comments#update"
-# patch   "/comments/:id"         =>  "comments#update"
-# delete  "/comments/:id"         =>  "comments#destroy"
+# Comment routes
+get     "/comments/new"         =>  "comments#new", as: "new_comment"
+post    "/comments/new"         =>  "comments#create"
+get     "/comments"             =>  "comments#index", as: "comments"
+get     "/comments/:id"         =>  "comments#show", as: "comment"
+get     "/comments/:id/edit"    =>  "comments#edit", as: "edit_comment"
+put     "/comments/:id"         =>  "comments#update"
+patch   "/comments/:id"         =>  "comments#update"
+delete  "/comments/:id"         =>  "comments#destroy"
 
 end

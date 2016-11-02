@@ -1,13 +1,12 @@
-#postBox{
+#post_box{
   width: 500px;
   height: 300px;
   border-style: solid;
   border-width: 2px;
   border-color: black;
   margin: 0 auto;
-  /*text-align: center;*/
 }
-#movieTitle{
+#movie_title{
   width: 500px;
   height: 30px;
   border-bottom-style: solid;
@@ -18,10 +17,43 @@
   font-size: 22px;
   color: white;
 }
-#textPost{
-  height: 270px;
+#text_post{
+  height: 235px;
   width: 500px;
   font-size: 28px;
   background-color: #FFFFFF;
   opacity: .8;
+}
+#button_box{
+  position: relative;
+  display: inline-block;
+  width: 500px;
+  height: 30px;
+  top: 0px;
+  left: 0px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: #0081b8;
+  opacity: .8;
+  font-size: 22px;
+  color: white;
+  margin: 0 auto;
+}
+#comm_add{
+  margin-left: 13px;
+  height: 30px;
+  width: 40px;
+  font-size: 22px;
+}
+#comm_view_visible{
+  visibility: visible;
+  margin-left: 198px;
+  height: 30px;
+  width: 40px;
+  font-size: 22px;
+}
+#comm_view_hidden{
+  visibility: hidden;
 }

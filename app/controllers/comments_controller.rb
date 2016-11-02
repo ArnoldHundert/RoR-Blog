@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
 
   def index #
     @title = "Comments"
-    @message = "This is a list of all comments."
-    # @comments = comment.all
+    @message = "This is all of this post's comments."
+    # @comments = Comment.where([params][:post_id])
   end
 
   def new #
@@ -13,27 +13,12 @@ class CommentsController < ApplicationController
   def create
     # This action receives data from #new and creates a new comment.
 
-    # puts "PARAMS:"
-    # puts params["comment"]["firstname"]
-    # puts params["comment"]["lastname"]
-
-    # .create returns the obj that was just created
-    # @new_comment = Comment.create(firstname: params["comment"]["firstname"], lastname: params["comment"]["lastname"])
-
-    # check if .create did its job
-    # if @new_comment
-    #   puts "SUCCESS"
-    #   redirect_to url_for(:controller => :comments, :action => :index)
-    # else
-    #   puts "ERROR!!"
-    #   redirect_to url_for(:controller => :comments, :action => :new)
-    # end
   end
 
   def show #
-    # @comment = Comment.find(params[:id])
-    # @message = "This route shows all info for an individual comment named: #{@comment.firstname} #{@comment.lastname}."
     @message = "This route shows all info for an individual comment."
+    # @message = "This route shows all info for an individual comment named: #{@comment.firstname} #{@comment.lastname}."
+    @comment = Comment.find(params[:post_id])
   end
 
   def edit #

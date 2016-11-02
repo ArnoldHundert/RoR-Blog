@@ -1,8 +1,28 @@
 <!-- Comment's file -->
 
-<br><br>
-<div class="messageStyle">
+<br>
+<!-- <div class="messageStyle">
   <%= @message %>
-</div>
+</div> -->
 
-<!-- <%= @users %> -->
+<div id="comment_box">
+  <div id="movieTitle">
+      * * * Comments for <%= mt.which_movie %> * * *
+  </div>
+  <div id="textPost">
+    <%= mt.post_text %>
+  </div>
+  <div id="buttonBox">
+      <span id="commAdd">
+        <a href="/comments">
+        Add Comment
+      </a>
+      </span>
+      <span id="commView">
+        <a href="/comments/new">
+        View Comment
+        </a>
+      </span>
+  </div>
+</div>
+<br>

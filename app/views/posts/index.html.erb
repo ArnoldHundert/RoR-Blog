@@ -1,24 +1,39 @@
-<!-- Posts' file -->
+  <!-- Posts' file -->
 
 <br>
 <div class="messageStyle">
   <%= @message %>
 </div><br>
 
-
   <% @posts.each do |mt| %>
-
-    <div id="postBox">
-
-      <div id="movieTitle">
-          * * * <%= mt.which_movie %> * * * 
+    <div id="post_box">
+      <div id="movie_title">
+          * * * <%= mt.which_movie %> * * *
       </div>
-
-
-      <div id="textPost">
+      <div id="text_post">
         <%= mt.post_text %>
       </div>
-
+      <div id="button_box">
+          <span id="comm_add">
+            <a href="/comments">
+            Add Comment
+          </a>
+          </span>
+          <span id="comm_view">
+            <a href="/comments/new">
+            View Comment
+            </a>
+          </span>
+      </div>
     </div>
-
+    <script>
+    function myFunction() {
+        var comment_yn = document.getElementById('comm_view');
+        if (mt.comment){
+          comment_yn.setAttribute("style", "visibility: visible;");
+        } else {
+          comment_yn.setAttribute("style", "visibility: hidden;");        }
+    }
+    </script>
+    <br>
   <% end %>

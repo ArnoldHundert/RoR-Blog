@@ -4,11 +4,6 @@
 <div class="messageStyle">
   <%= @message %>
 </div>
-
-<!-- <br>
-<br>
-<%= @user.id %>.
-<%= @user.firstname %>
-<%= @user.lastname %>
-<br>
-<br> -->
+  <%= @comment.each do |c| %>
+    <%= c.comment_text %>
+  <% end %>
